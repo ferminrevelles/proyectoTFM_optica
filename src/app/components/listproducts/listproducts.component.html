@@ -1,0 +1,32 @@
+          <!--Product Table-->
+          <!-- component -->
+      <div class="w-full overflow-hidden rounded-lg shadow-xs">
+        <div class="w-full overflow-x-auto">  
+          <table class="pl-8 md:mx-auto min-w-full border-collapse block md:table ">
+            <thead class="block  md:table-header-group">
+              <tr class="border border-grey-500 md:border-none block md:table-row absolute -top-full md:top-auto -left-full md:left-auto  md:relative ">
+                <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell w-1/6">Imagen</th>
+                <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell w-1/6">Marca</th>
+                <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell w-1/6">Modelo</th>
+                <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell w-1/6">Precio</th>
+                <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell w-1/6">Cantidad</th>
+                <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell text-center w-1/6">Acciones</th>
+              </tr>
+            </thead>
+            <tbody class="block md:table-row-group">
+              <tr *ngFor="let product of products" class="bg-gray-300 border border-grey-500 md:border-none block md:table-row">
+                <td class="p-1 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/6 md:hidden font-bold ">Imagen</span><img class=" mx-0" src="{{product.imgUrl}}"/></td>
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/6 md:hidden font-bold">Marca</span>{{product.brand}}</td>
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/6 md:hidden font-bold">Modelo</span>{{product.model}}</td>
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/6 md:hidden font-bold">Precio</span>{{product.price}}</td>
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/6 md:hidden font-bold">Cantidad</span>{{product.size}}</td>
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell text-center">
+                  <span class="inline-block w-1/3 md:hidden font-bold">Actions</span>
+                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded mr-3" (click)="modifyProduct(product)" ><mat-icon aria-hidden="false" aria-label="Example home icon">edit</mat-icon></button>
+                  <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded " (click)="deleteProduct(product.model)" ><mat-icon aria-hidden="false" aria-label="Example home icon">delete</mat-icon></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>

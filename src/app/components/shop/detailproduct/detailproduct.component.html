@@ -1,0 +1,26 @@
+<app-header></app-header>
+
+<!-- component -->
+<section class="text-gray-700 body-font overflow-hidden bg-white">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="lg:w-10/12 mx-auto flex flex-wrap">
+        <div class="lg:w-1/2">
+        <img alt="ecommerce" class="w-full  object-cover object-center rounded border border-gray-200" src="{{detailProduct.imgUrl}}">
+        </div>
+        <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+          <h2 class="text-sm title-font text-gray-500 tracking-widest">{{detailProduct.brand}}</h2>
+          <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{detailProduct.model}}</h1>
+          <p class="leading-relaxed">{{detailProduct.description}}</p>
+          <div class="mx-auto text-center w-full">
+            <span class="title-font font-medium text-4xl text-gray-900">{{detailProduct.price}}€</span>
+          </div>
+          <div class="text-center mx-auto w-full">
+            <button class=" ml-4 my-4 text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-xl" (click)="addProduct(detailProduct)"><i class="mr-4 mt-1 fas fa-cart-plus"></i>Añadir</button>
+            <button class=" ml-4 text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-xl" (click)="back()"><i class="mr-4 mt-1 fas fa-arrow-circle-left"></i>Volver</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<app-footer></app-footer>
